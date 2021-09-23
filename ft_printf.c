@@ -46,7 +46,7 @@ void    ft_printf(char *format, ...)
 {
     int i = 0;
     va_list countPtr;
-    _crt_va_start(countPtr, format);
+    va_start(countPtr, format);
     while(format[i])
     {
         if (format[i] != 37)
@@ -57,15 +57,15 @@ void    ft_printf(char *format, ...)
         {
             switch (format[i + 1]) {
             case 's':
-                putstr(_crt_va_arg(countPtr, char *));
+                putstr(va_arg(countPtr, char *));
                 i++;
                 break;
             case 'd':
-                putnbr(_crt_va_arg(countPtr, int));
+                putnbr(va_arg(countPtr, int));
                 i++;
                 break;
             case 'f':
-                putfnbr(_crt_va_arg(countPtr, double));
+                putfnbr(va_arg(countPtr, double));
                 i++;
                 break;
             default:
@@ -74,7 +74,7 @@ void    ft_printf(char *format, ...)
         }
         i++;
     }
-    _crt_va_end(countPtr);
+    va_end(countPtr);
 }
 
 
