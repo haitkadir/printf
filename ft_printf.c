@@ -1,5 +1,4 @@
 #include <unistd.h>
-#include <stdio.h>
 #include <stdarg.h>
 
 void    putnbr(int number)
@@ -82,7 +81,7 @@ void    ft_printf(char *format, ...)
 int main(void)
 {
 
-    ft_printf("My name is %s and I'm %f years old and I'm a %s", "Hssain", 55.3, "Programmer");
+    ft_printf("My name is %s and I'm %d years old and I'm a %s, and my stuff dagree is %f", "Hssain", 23, "Programmer", 99.5);
 
     return (0);
 }
